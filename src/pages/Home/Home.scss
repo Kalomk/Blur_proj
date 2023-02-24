@@ -1,0 +1,15 @@
+.homePage {
+  display: flex;
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    padding: 48px 0 20px 0;
+    &__discover-part {
+      display: flex;
+      flex-direction: column;
+      padding: 0 61px;
+      margin: 0;
+    }
+  }
+}

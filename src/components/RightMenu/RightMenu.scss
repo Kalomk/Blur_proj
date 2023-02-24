@@ -1,0 +1,108 @@
+@import 'style/variables.scss';
+.rightmenu {
+  display: flex;
+  flex-direction: column;
+  padding-right: 47px;
+  .account-menu {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 31px;
+  }
+  .player {
+    h3 {
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      margin: 35px 0 19px 0;
+      font-weight: 500;
+    }
+    &__container {
+      background: url('../../assets/Rectangle 5.png') no-repeat center;
+      border-radius: 20px;
+      height: 261px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &__player-menu {
+      background: rgba(40, 40, 40, 0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+    }
+    .menu-player {
+      padding: 24px;
+      &__name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 38px;
+        text-align: center;
+      }
+      &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        margin-bottom: 24px;
+        color: #0070f4;
+      }
+      .controller {
+        svg {
+          &:hover {
+            path {
+              fill: #00d7f4;
+            }
+          }
+        }
+        &__track {
+          margin-bottom: 24px;
+        }
+        &__btns {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+    input[type='range'] {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      cursor: pointer;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-runnable-track {
+        background: rgba(204, 204, 204, 0.295);
+        height: 8px;
+        position: relative;
+        z-index: 1;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 100%;
+        margin-top: -4px;
+        height: 16px;
+        width: 16px;
+        background-color: $colorSecondary;
+        opacity: 1;
+      }
+      &::-moz-range-track {
+        background: rgba(204, 204, 204, 1);
+        height: 8px;
+        position: relative;
+        opacity: 0.3;
+        z-index: 1;
+      }
+    }
+  }
+}

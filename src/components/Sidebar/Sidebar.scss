@@ -1,0 +1,70 @@
+@import 'style/variables.scss';
+
+.sidebar {
+  width: 300px;
+  background: $colorPrimary;
+  .wrapper-sidebar {
+    position: fixed;
+    &__content {
+      height: 100vh;
+      display: flex;
+      padding: 33px 0 0 36px;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      position: relative;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      position: relative;
+      cursor: pointer;
+      &.active {
+        &::after {
+          content: '';
+          position: absolute;
+          top: -6px;
+          right: -95.4px;
+          width: 295px;
+          height: 140%;
+          background: #00d8f412;
+          z-index: -1;
+        }
+      }
+      &:hover {
+        filter: drop-shadow(0 0 6px #008af4);
+        svg {
+          transition: all 0.3s ease-in-out 0s;
+          filter: drop-shadow(0 0 6px #008af4);
+          path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s forwards;
+          }
+        }
+      }
+    }
+    &__logo {
+      margin: 0 0 81px 0;
+      svg {
+        width: 146px;
+        height: 50px;
+      }
+    }
+    .menu-sidebar {
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &__utils {
+      position: absolute;
+      bottom: 61px;
+      & > :not(:last-child) {
+        margin-bottom: 47px;
+      }
+    }
+  }
+}

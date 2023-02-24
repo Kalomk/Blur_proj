@@ -1,0 +1,106 @@
+$animation-duration: 20s;
+$animation-reverse: false;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.charts {
+  perspective: 1000px;
+  width: 363px;
+  height: 349px;
+  background: #161616;
+  border-radius: 20px;
+  padding: 20px 0;
+  overflow-y: hidden;
+  h3 {
+    text-align: center;
+    padding: 31px 0;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .top-charts {
+    position: relative;
+    height: 219px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: spinWheel;
+    animation-duration: $animation-duration;
+    @if $animation-reverse {
+      animation-direction: reverse;
+    }
+    &:hover {
+      animation-play-state: paused;
+    }
+    .list-items {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      top: 50%;
+      background: #1e1e1e;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 0 22px;
+      gap: 10px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+      &:hover {
+        filter: drop-shadow(0 0 6px #008af4);
+      }
+      &__label {
+        min-width: 168px;
+      }
+      &__img {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #00d7f4;
+        border-radius: 50%;
+      }
+      &__title {
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 28px;
+        white-space: nowrap;
+      }
+      &__name {
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 28px;
+      }
+      svg {
+        justify-self: flex-end;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes spinWheel {
+  0% {
+    transform: rotateX(360deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes stopWheel {
+  0% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(-20deg);
+  }
+}

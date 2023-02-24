@@ -1,0 +1,120 @@
+@import 'style/variables.scss';
+$randomizer-height: 320px;
+@property --rotate {
+  syntax: '<angle>';
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.background_background__3Oeal {
+  height: $randomizer-height;
+  max-width: 98.7%;
+  background-color: #191c29;
+  border-radius: 20px;
+  margin-top: 70px;
+  display: flex;
+  position: relative;
+  top: -61.5px;
+  left: 4.2px;
+  padding: 18px;
+  font-family: $fontSecondary;
+  &__text {
+    flex: 0 0 60%;
+    padding: 20px 0;
+    color: #b3b3fe;
+    font-size: 45px;
+    transition: all 0.2s ease-in-out 0s;
+    position: relative;
+  }
+  &::before {
+    content: '';
+    width: 101%;
+    height: 105%;
+    border-radius: 25px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -2.5%;
+    left: -0.5%;
+    animation: spin 3.5s linear infinite;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: calc($randomizer-height / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc($randomizer-height / 6));
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 3.5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  .circle {
+    stroke: $colorSecondary;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    -webkit-transition: all 0.5s ease-in-out;
+    opacity: 0.6;
+    margin-top: 15px;
+    .playBut {
+      /*  border: 1px solid red;*/
+      display: inline-block;
+      -webkit-transition: all 0.5s ease;
+
+      .triangle {
+        -webkit-transition: all 0.7s ease-in-out;
+        stroke-dasharray: 240;
+        stroke-dashoffset: 480;
+        stroke: $colorSecondary;
+        transform: translateY(0);
+      }
+
+      &:hover {
+        .triangle {
+          stroke-dashoffset: 0;
+          opacity: 1;
+          stroke: $colorSecondary;
+          animation: nudge 0.7s ease-in-out;
+
+          @keyframes nudge {
+            0% {
+              transform: translateX(0);
+            }
+            30% {
+              transform: translateX(-5px);
+            }
+            50% {
+              transform: translateX(5px);
+            }
+            70% {
+              transform: translateX(-2px);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+        }
+
+        .circle {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

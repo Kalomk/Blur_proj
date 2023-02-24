@@ -1,0 +1,36 @@
+@import './normalize.scss';
+@import './variables.scss';
+body {
+  background-color: #1e1e1e;
+  color: $colorSecondary;
+  font-family: $fontMain;
+  font-weight: 400;
+}
+svg {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out 0s;
+  &.icons {
+    path {
+      fill: none;
+      stroke: #0070f4;
+      stroke-width: 1;
+      stroke-dasharray: 2566;
+      stroke-dataoffset: 2566;
+    }
+  }
+  &:hover {
+    transition: all 0.3s ease-in-out 0s;
+    filter: drop-shadow(0 0 6px #008af4);
+    path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 5s forwards;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

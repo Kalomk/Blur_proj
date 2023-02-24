@@ -1,0 +1,17 @@
+@import 'style/variables.scss';
+
+.search {
+  background: $colorPrimary;
+  border-radius: 20px;
+  &__form {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 23px;
+  }
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    padding-left: 25px;
+  }
+}

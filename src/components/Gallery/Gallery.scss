@@ -1,0 +1,67 @@
+.gallery {
+  img {
+    border-radius: 20px;
+  }
+  &__title {
+    margin: 50px 0 19px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, auto));
+    & > * {
+      margin-bottom: 25px;
+    }
+  }
+  .mus-card {
+    cursor: pointer;
+    position: relative;
+    img {
+      max-width: 268px;
+      height: 261px;
+    }
+    &__cover {
+      position: relative;
+      svg {
+        position: absolute;
+        left: 145px;
+        top: 190px;
+        z-index: 5;
+      }
+    }
+    &__des-content {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 3;
+      height: 90%;
+      border-radius: 20px;
+      opacity: 0;
+      visibility: visible;
+      max-width: 261px;
+      background: rgba(0, 0, 0, 0.75);
+      &:hover {
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
+      }
+      transition: opacity 0.3s ease-out, visibility 0.3s 0.3s, transform 0.3s ease-out, height 0.3s;
+      .mus-card__des-list {
+        display: block;
+        height: 100%;
+        padding: 25px 27px 65px;
+        color: #fff;
+        outline: 0;
+        font-size: 24px;
+        line-height: 1.2;
+        overflow: hidden;
+        text-align: justify;
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+$main_cont: 1280;
+$containerWidth: 1440;
+$containerPadding: 40;
+$containerSidePadding: math.div($containerPadding, 2);
+$breakPoint1200: 1199.98 + px;
+$breakPoint992: 991.98 + px;
+$breakPoint768: 767.98 + px;
+$breakPoint480: 479.98 + px;
+// fonst
+$fontMain: 'Montserrat', sans-serif;
+$fontSecondary: 'system-ui';
+//colors
+$colorPrimary: #1616166d;
+$colorSecondary: #0070f4;
